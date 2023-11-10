@@ -17,10 +17,10 @@ export async function GET() {
   const { success } = await ratelimit.limit(identifier);
 
   if (!success) {
-    return Response.json({ message: "Rate limit exceeded" });
+    return new Response(JSON.stringify({ message: "Rate limit exceeded" }));
   }
 
   const res = await redis.get("hello");
 
-  return Response.json({ message: res });
+  return new Response(JSON.stringify({ message: res }));
 }
