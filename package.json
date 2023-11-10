@@ -26,6 +26,7 @@
   },
   "type": "module",
   "dependencies": {
+    "@upstash/ratelimit": "^0.4.4",
     "@upstash/redis": "^1.25.0"
   }
 }
